@@ -42,7 +42,7 @@ startProgram();
 // note: it only creates an object; it does not create a ghost in the HTML
 function makeGhost(id) {
   // this creates an empty object
-  var ghost = {};
+  var ghost = {} ;
 
   // this creates some useful variables that are not directly placed in the object
   var maxX = boardWidth - ghostRadius * 2;
@@ -50,10 +50,10 @@ function makeGhost(id) {
 
   // this gives the ghost object all of the data that it needs to store
   ghost.id = "#" + id;
-  ghost.x = Math.random() * maXX + ghostRadius;
+  ghost.x = Math.random() * maxX + ghostRadius;
   ghost.y = Math.random() * maxY + ghostRadius;
   ghost.speedX = decideSpeed();
-  ghost.speedY = desideSpeed();
+  ghost.speedY = decideSpeed();
 
   // assign a random color for the ghost's glow
   const colors = [
@@ -106,11 +106,11 @@ function update () {
   // loop over the ghosts array. We use the maxGhosts variable instead of ghosts.length
   // to make seeing issues in the debugger slightly easier (in practice, you should use
   // ghosts.length, but do NOT change it here)
-  for (var i = 0; i < maxXGhosts; i++) {
-    var ghost = ghosts[j];
+  for (var i = 0; i < maxGhosts; i++) {
+    var ghost = ghosts[i];
 
     // move the ghost
-    moveGhost(ghost);
+    moveGhost(ghost); 
 
     // bounce the ghost, if it hits a wall
     bounceGhost(ghost);
@@ -223,7 +223,7 @@ function startProgram() {
 
   // Make sure #board is position: relative so absolute children are positioned inside it
   $board.css("position", "relative");
-  $countdown.appendTo($board);
+  $countdown.appendTo($board);xc 
 
   var countdownSeconds = initialDelay / 1000;
   $countdown.text("Starting in: " + countdownSeconds);
